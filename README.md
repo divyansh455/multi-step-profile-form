@@ -8,8 +8,8 @@ A full-stack web application allowing users to update their profile information 
 
 ## Live Demo
 
-* **Frontend:** [Link to your deployed frontend application (e.g., on Vercel/Netlify)]() *(<- Add your link here after deployment)*
-* **Backend API Base URL:** [Link to your deployed backend API (e.g., on Render/Cyclic)]() *(<- Optional: Add your link here after deployment)*
+* **Frontend:** [https://multi-step-profile-form-8yqm4r7gr-divyansh455s-projects.vercel.app/)]() *(<- Add your link here after deployment)*
+* **Backend API Base URL:** [https://multi-step-profile-form.onrender.com]() *(<- Optional: Add your link here after deployment)*
 
 ## Features
 
