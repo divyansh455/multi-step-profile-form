@@ -1,0 +1,209 @@
+/* // frontend/src/App.css */
+/* Basic styling - Enhance as needed! */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7f6;
+}
+
+.App {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+/* Form Styles */
+.form-step,
+.summary-section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+}
+
+.form-step h2,
+.summary-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1.4em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Include padding in width */
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+
+/* Buttons */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.form-navigation button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-navigation button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form-navigation button.prev-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.form-navigation button.prev-button:hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+
+.form-navigation button.next-button,
+.form-navigation button.submit-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-navigation button.next-button:hover:not(:disabled),
+.form-navigation button.submit-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+
+/* Validation Errors & Messages */
+.error-message {
+  color: #dc3545;
+  /* Red */
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.success-message {
+  color: #28a745;
+  /* Green */
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Specific Component Styles */
+.image-preview img {
+  max-width: 150px;
+  max-height: 150px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.password-strength-meter {
+  height: 10px;
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  /* Ensure inner bar stays within bounds */
+}
+
+.strength-bar {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-text {
+  font-size: 0.85em;
+  margin-top: 3px;
+  text-align: right;
+}
+
+.strength-weak {
+  color: #dc3545;
+}
+
+.strength-medium {
+  color: #ffc107;
+}
+
+.strength-strong {
+  color: #28a745;
+}
+
+
+/* Radio/Checkbox */
+.radio-group label,
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 1rem;
+  font-weight: normal;
+}
+
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  /* Align checkbox/radio with text */
+}
+
+/* Summary Page */
+.summary-section p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.summary-section strong {
+  color: #333;
+  margin-right: 8px;
+}
