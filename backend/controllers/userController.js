@@ -16,18 +16,26 @@ import {
 // @route   GET /api/users/profile/:userId
 // @access  Private (should add auth middleware)
 const getUserProfile = async (req, res) => {
+  // *** ADDED DEBUG LOG ***
+  console.log(
+    `[getUserProfile] Function called for userId: ${req.params.userId}`
+  );
   try {
     const user = await User.findById(req.params.userId).select("-password"); // Exclude password
 
     if (user) {
+      console.log(`[getUserProfile] User found: ${user.username}`); // Debug Log
       res.json(user);
     } else {
+      console.log(
+        `[getUserProfile] User not found for ID: ${req.params.userId}`
+      ); // Debug Log
       res.status(404);
       throw new Error("User not found");
     }
   } catch (error) {
     // Use the errorMiddleware via next(error) for consistency, or handle here
-    console.error(`Error in getUserProfile: ${error.message}`);
+    console.error(`[getUserProfile] Error: ${error.message}`); // Debug Log
     const statusCode =
       res.statusCode === 200
         ? error.message === "User not found"
@@ -42,6 +50,10 @@ const getUserProfile = async (req, res) => {
 // @route   PUT /api/users/profile/:userId
 // @access  Private (should add auth middleware)
 const updateUserProfile = async (req, res) => {
+  // *** ADDED DEBUG LOG ***
+  console.log(
+    `[updateUserProfile] Function called for userId: ${req.params.userId}`
+  );
   try {
     const userId = req.params.userId;
     console.log(`[Update Profile] Attempting to update user: ${userId}`); // Debug Log

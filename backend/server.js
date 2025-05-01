@@ -27,10 +27,17 @@ app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bodies
 
 // --- API Routes ---
+// Log incoming requests (optional but helpful for debugging 404s)
+app.use((req, res, next) => {
+  console.log(`[Server] Incoming Request: ${req.method} ${req.originalUrl}`);
+  next();
+});
+
 app.get("/api", (req, res) => {
   res.send("API is running...");
 });
 
+// Mount the specific route handlers
 app.use("/api/users", userRoutes);
 app.use("/api/locations", locationRoutes);
 app.use("/api/upload", uploadRoutes);
@@ -43,6 +50,7 @@ console.log(`[Server] Serving static files from directory: ${uploadsPath}`); // 
 app.use("/uploads", express.static(uploadsPath));
 
 // --- Error Handling Middleware ---
+// This needs to come *after* the routes
 app.use(notFound); // Handle 404 errors first
 app.use(errorHandler); // Handle all other errors
 

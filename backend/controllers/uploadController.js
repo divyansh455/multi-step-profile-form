@@ -4,6 +4,7 @@
 import multer from "multer";
 import path from "path";
 import fs from "fs"; // File system module
+// Removed unused import for fileURLToPath and __dirname definition as it's not needed here
 import {
   validateFileType,
   validateFileSize,
@@ -15,7 +16,8 @@ import {
 const storage = multer.diskStorage({
   // Set the destination directory for uploads
   destination: (req, file, cb) => {
-    // Correct path relative to the project root (assuming server.js is in backend/)
+    // *** REVERTED PATH CALCULATION ***
+    // Path relative to the project root (where node was started)
     const uploadPath = path.join(process.cwd(), "backend", "uploads");
     console.log(`[Multer Destination] Attempting to use path: ${uploadPath}`); // Debug Log
     // Create the directory if it doesn't exist
